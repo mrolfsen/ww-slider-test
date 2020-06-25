@@ -22,11 +22,6 @@
     <div>slide content 5</div>
   </div>
   <div class="slider-nav">
-    <div>nav item 1</div>
-    <div>nav item 2</div>
-    <div>nav item 3</div>
-    <div>nav item 4</div>
-    <div>nav item 5</div>
   </div>
 
 </section>
@@ -38,6 +33,18 @@
 
   <script type="text/javascript">
 
+    /* some custom code */
+
+    var $selector = $('.slider-for'); /* Assuming the selector is `this` */
+    var count = $selector.children("div").length;
+    console.log(count)
+
+    $( ".slider-for > div" ).each(function(i){
+      $('.slider-nav').append('<div class="nav-item">hello</div>');
+    });
+    $(".nav-item").each(function(i){
+      $(this).prepend((i + 1) + ". ");
+    });
 
     /* synced sliders */
     /* we need to genertae the second (the nav) on the fly */
